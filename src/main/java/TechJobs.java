@@ -127,4 +127,8 @@ public class TechJobs {
        }
            System.out.println("*****"+"\n");
     }
-}}
+     if(someJobs.isEmpty()){
+         System.out.println("No Results");
+     }
+}
+}
