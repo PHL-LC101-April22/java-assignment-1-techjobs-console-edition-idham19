@@ -1,3 +1,4 @@
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -5,10 +6,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -99,7 +97,26 @@ public class JobData {
         loadData();
 
         // TODO - implement this method
-        return null;
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> allJob : allJobs) {
+            if(allJob.containsValue(value)){
+
+            System.out.println("*****");
+          for(Map.Entry<String,String> job :allJob.entrySet()){
+              System.out.println(job.getKey()+": "+job.getValue());
+          }
+            System.out.println("*****"+"\n");
+            }
+//
+//            if (job.contains(value)) {
+//                jobs.add(job);
+//            }
+        }
+
+        return jobs;
+
+//        return null;
     }
 
     /**
