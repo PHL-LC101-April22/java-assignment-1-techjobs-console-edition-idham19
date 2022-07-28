@@ -82,7 +82,7 @@ public class JobData {
             }
         }
      if(!jobs.contains(value)){
-         System.out.println("No Results");
+        return null;
      }
         return jobs;
     }
@@ -105,11 +105,11 @@ public class JobData {
            String newAllJob= allJob.values().toString().toLowerCase();
             if(newAllJob.contains(value.toLowerCase())){
 
-            System.out.println("*****");
+            System.out.println("\n*****");
           for(Map.Entry<String,String> job :allJob.entrySet()){
               System.out.println(job.getKey()+": "+job.getValue());
           }
-            System.out.println("*****"+"\n");
+            System.out.println("*****");
             }
 
         }
