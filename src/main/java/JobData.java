@@ -1,4 +1,4 @@
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+//import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -75,9 +75,9 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column);
+            String aValue = row.get(column).toLowerCase();
 
-            if (aValue.contains(value)) {
+            if (aValue.contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -100,7 +100,8 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> allJob : allJobs) {
-            if(allJob.containsValue(value)){
+           String newAllJob= allJob.values().toString().toLowerCase();
+            if(newAllJob.contains(value.toLowerCase())){
 
             System.out.println("*****");
           for(Map.Entry<String,String> job :allJob.entrySet()){
@@ -108,15 +109,11 @@ public class JobData {
           }
             System.out.println("*****"+"\n");
             }
-//
-//            if (job.contains(value)) {
-//                jobs.add(job);
-//            }
+
         }
 
         return jobs;
 
-//        return null;
     }
 
     /**
