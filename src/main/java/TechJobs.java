@@ -119,6 +119,9 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+     if(someJobs.isEmpty()){
+         System.out.println("No Results");
+     }
      for(HashMap<String,String>jobList : someJobs){
        HashMap<String,String>jobs=jobList;
          System.out.println("\n*****");
@@ -126,11 +129,6 @@ public class TechJobs {
            System.out.println(job.getKey()+": "+job.getValue());
        }
            System.out.println("*****");
-
     }
-//     if(someJobs.isEmpty()){
-//         System.out.println("No Results");
-//     }
-
 }
 }
