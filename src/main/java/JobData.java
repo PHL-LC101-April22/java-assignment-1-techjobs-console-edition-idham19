@@ -82,7 +82,7 @@ public class JobData {
             }
         }
  if(jobs.isEmpty()){
-     System.out.println("No Results");
+     System.out.println(" No Results");
  }
         return jobs;
 
