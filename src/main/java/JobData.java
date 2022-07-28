@@ -1,3 +1,5 @@
+//import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+import com.sun.jdi.Value;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -5,10 +7,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -25,7 +24,7 @@ public class JobData {
      * without duplicates, for a given column.
      *
      * @param field The column to retrieve values from
-     * @return List of all of the values of the given field
+     * @return List of all the values of the given field
      */
     public static ArrayList<String> findAll(String field) {
 
@@ -58,7 +57,7 @@ public class JobData {
     }
 
     /**
-     * Returns results of search the jobs data by key/value, using
+     * Returns results of search the jobs' data by key/value, using
      * inclusion of the search term.
      *
      * For example, searching for employer "Enterprise" will include results
@@ -74,17 +73,19 @@ public class JobData {
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
         for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column);
+            String aValue = row.get(column).toLowerCase();
 
-            if (aValue.contains(value)) {
+            if (aValue.contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
-
+ if(jobs.isEmpty()){
+     System.out.println(" No Results ");
+ }
         return jobs;
+
     }
 
     /**
@@ -94,12 +95,22 @@ public class JobData {
      * @return      List of all jobs with at least one field containing the value
      */
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
-
         // load data, if not already loaded
         loadData();
-
         // TODO - implement this method
-        return null;
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        for (HashMap<String, String> allJob : allJobs) {
+           String newAllJob= allJob.values().toString().toLowerCase();
+            if(newAllJob.contains(value.toLowerCase())){
+            System.out.println("\n*****");
+          for(Map.Entry<String,String> job :allJob.entrySet()){
+              System.out.println(job.getKey()+": "+job.getValue());
+          }
+            System.out.println("*****");
+            }
+        }
+
+        return jobs;
     }
 
     /**
@@ -144,3 +155,5 @@ public class JobData {
     }
 
 }
+
+

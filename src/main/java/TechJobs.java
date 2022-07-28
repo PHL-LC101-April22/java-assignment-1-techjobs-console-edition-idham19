@@ -55,7 +55,7 @@ public class TechJobs {
             } else { // choice is "search"
 
                 // How does the user want to search (e.g. by skill or employer)
-                String searchField = getUserSelection("Search by:", columnChoices);
+                String searchField = getUserSelection("Search by:",columnChoices);
 
                 // What is their search term?
                 System.out.println("\nSearch term:");
@@ -64,7 +64,7 @@ public class TechJobs {
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
-                    printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
+                    printJobs(JobData.findByColumnAndValue(searchField,searchTerm));
                 }
             }
         }
@@ -119,7 +119,13 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+     for(HashMap<String,String>jobList : someJobs){
 
-        System.out.println("printJobs is not implemented yet");
+         System.out.println("\n*****");
+       for(Map.Entry<String ,String> job : jobList.entrySet()){
+           System.out.println(job.getKey()+": "+job.getValue());
+       }
+           System.out.println("*****");
     }
+}
 }
