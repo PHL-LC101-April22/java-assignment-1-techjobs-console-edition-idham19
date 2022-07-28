@@ -112,9 +112,10 @@ public class JobData {
           }
             System.out.println("*****");
             }
+            else {
+                return null;
+            }
         }
-
-
         return jobs;
 
     }
