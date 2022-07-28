@@ -81,7 +81,9 @@ public class JobData {
                 jobs.add(row);
             }
         }
-
+     if(!jobs.contains(value)){
+         System.out.println("No Result");
+     }
         return jobs;
     }
 
