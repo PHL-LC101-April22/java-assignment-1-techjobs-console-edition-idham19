@@ -81,9 +81,6 @@ public class JobData {
                 jobs.add(row);
             }
         }
-//     if(!jobs.contains(value)){
-//        return null;
-//     }
         return jobs;
     }
 
@@ -111,9 +108,6 @@ public class JobData {
               System.out.println(job.getKey()+": "+job.getValue());
           }
             System.out.println("*****");
-            }
-            else {
-                return null;
             }
         }
         return jobs;

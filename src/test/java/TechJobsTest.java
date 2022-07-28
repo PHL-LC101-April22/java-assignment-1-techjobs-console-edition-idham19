@@ -53,13 +53,13 @@ public class TechJobsTest {
         assertEquals(expected, output);
     }
 
-//    @Test
-//    public void testFindByValue() throws IOException {
-//        String input = "0\n0\nRuby\nx";
-//        String output = runProgramWithInput(input);
-//        String expected = getFileContents("src/test/resources/testFindByValue.txt");
-//        assertEquals(expected, output);
-//    }
+    @Test
+    public void testFindByValue() throws IOException {
+        String input = "0\n0\nRuby\nx";
+        String output = runProgramWithInput(input);
+        String expected = getFileContents("src/test/resources/testFindByValue.txt");
+        assertEquals(expected, output);
+    }
 
     @Test
     public void testCaseInsensitiveSearch() throws IOException {
