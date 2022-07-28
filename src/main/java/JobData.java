@@ -82,7 +82,7 @@ public class JobData {
             }
         }
      if(!jobs.contains(value)){
-         System.out.println("No Result");
+         System.out.println("");
      }
         return jobs;
     }
