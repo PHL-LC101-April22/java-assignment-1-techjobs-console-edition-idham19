@@ -99,7 +99,6 @@ public class JobData {
         loadData();
         // TODO - implement this method
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
         for (HashMap<String, String> allJob : allJobs) {
            String newAllJob= allJob.values().toString().toLowerCase();
             if(newAllJob.contains(value.toLowerCase())){
@@ -110,6 +109,7 @@ public class JobData {
             System.out.println("*****");
             }
         }
+
         return jobs;
     }
 

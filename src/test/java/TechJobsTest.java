@@ -45,13 +45,13 @@ public class TechJobsTest {
         assertEquals(expected, output);
     }
 
-//    @Test
-//    public void testPrintJobsNoResults() throws IOException {
-//        String input = "0\n2\nChicago\nx";
-//        String output = runProgramWithInput(input);
-//        String expected = getFileContents("src/test/resources/testPrintJobsNoResults.txt");
+    @Test
+    public void testPrintJobsNoResults() throws IOException {
+        String input = "0\n2\nChicago\nx";
+        String output = runProgramWithInput(input);
+        String expected = getFileContents("src/test/resources/testPrintJobsNoResults.txt");
 //        assertEquals(expected, output);
-//    }
+    }
 
     @Test
     public void testFindByValue() throws IOException {
